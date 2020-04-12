@@ -19,10 +19,17 @@ numpy 1.16.4
 ## 解决方案
 1. 创建布尔型连接矩阵（利用Scipy.sparse创建稀疏矩阵更加节省内存），S代表资金源头，T代表转账目标，0代表没有转账，1代表发生转账：
 
+<div align=center><img src="https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/img/存储.JPG" alt="存储"/></div>
+
 2. 遍历资金源头的每一个客户，并指定其一级连接方式，例如：1->2->…我们就从2处开始分析。当分析完这个情况时，我们再分析1的其它可能连接情况。其中，每一级连接的目标都可以通过其对应行向量中为1的值对应的列索引得到。并把每一次连接的头部与尾部用列表保存下来，例如：
 
 <div align=center><img src="https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/img/头尾.JPG" alt="头尾"/></div>
 
 3. 通过头部列表与尾部列表构建连接方式，这里逆用杨辉三角解决问题：我们从最后一层构建个数连接关系，我们将源头数字转换为字符串格式，并与下图中的数值进行相乘。
 
-便可以得到转账关系矩阵：
+<div align=center><img src="https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/img/连接.JPG" alt="连接"/></div>
+
+4. 计算得到转账关系矩阵：
+
+<div align=center><img src="https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/img/结果.JPG" alt="结果"/></div>
+
