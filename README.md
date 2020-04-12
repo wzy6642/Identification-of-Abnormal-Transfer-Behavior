@@ -9,7 +9,7 @@ numpy 1.16.4
 通过金融风控的资金流水分析，可有效识别循环转账，辅助公安挖掘洗钱组织，帮助银行预防信用卡诈骗。基于给定的资金流水，检测并输出指定约束条件的所有循环转账。
 
 ## 数据详情
-输入为包含资金流水的文本文件，每一行代表一次资金交易记录，包含本端账号ID, 对端账号ID, 转账金额，用逗号隔开。举例如下，其中第一行1,2,100表示ID为1的账户给ID为2的账户转账100元：
+输入为包含资金流水的[文本文件](https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/Data/test_data.txt)，每一行代表一次资金交易记录，包含本端账号ID, 对端账号ID, 转账金额，用逗号隔开。举例如下，其中第一行1,2,100表示ID为1的账户给ID为2的账户转账100元：
 <br>1,2,100<br>
 1,3,100
 
@@ -34,6 +34,6 @@ numpy 1.16.4
 <div align=center><img src="https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/img/结果.JPG" alt="结果"/></div>
 
 ## 结果分析
-我们从上述连接关系中寻找循环部分便为循环转账用户。
+我们从上述连接关系中寻找循环部分便为循环转账用户，具体结果见[文档]((https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/code/result.txt)
 对于6000用户的数据集上述方法耗时1.26秒。具体代码参见[mainV1.2.py](https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/code/mainV1.2.py)
 对于大型数据集，我们可以采用随机游走的方式得到完整的循环转账用户，核心算法和上述过程一致，为了加快搜索可以在程序中引入多线程，具体代码参见[mainV1.3.py](https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/code/mainV1.3.py)
