@@ -34,6 +34,6 @@ numpy==1.16.4
 <div align=center><img src="https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/img/结果.JPG" alt="结果"/></div>
 
 ## 结果分析
-我们从上述连接关系中寻找循环部分便为循环转账用户，具体结果见[文档](https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/code/result.txt)
-对于6000用户的数据集上述方法耗时1.26秒。具体代码参见[mainV1.2.py](https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/code/mainV1.2.py)
+我们从上述连接关系中寻找循环部分便为循环转账用户，具体结果见[文档](https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/code/result.txt)<br>
+对于6000用户的数据集上述方法耗时1.26秒。具体代码参见[mainV1.2.py](https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/code/mainV1.2.py)<br>
 对于大型数据集，我们可以采用随机游走的方式得到完整的循环转账用户，核心算法和上述过程一致，为了加快搜索可以在程序中引入多线程，具体代码参见[mainV1.3.py](https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/code/mainV1.3.py)
