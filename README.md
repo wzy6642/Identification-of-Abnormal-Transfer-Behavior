@@ -21,7 +21,7 @@ numpy 1.16.4
 
 2. 遍历资金源头的每一个客户，并指定其一级连接方式，例如：1->2->…我们就从2处开始分析。当分析完这个情况时，我们再分析1的其它可能连接情况。其中，每一级连接的目标都可以通过其对应行向量中为1的值对应的列索引得到。并把每一次连接的头部与尾部用列表保存下来，例如：
 
-<div align=center><img width="400" height="600" src="https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/img/头尾.JPG" alt="头尾"/></div>
+<div align=center><img src="https://github.com/wzy6642/Identification-of-Abnormal-Transfer-Behavior/blob/master/img/头尾.JPG" alt="头尾"/></div>
 
 3. 通过头部列表与尾部列表构建连接方式，这里逆用杨辉三角解决问题：我们从最后一层构建个数连接关系，我们将源头数字转换为字符串格式，并与下图中的数值进行相乘。
 
